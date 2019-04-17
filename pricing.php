@@ -32,7 +32,7 @@ session_start(); ?>
 									echo "<li><a href='contact.php?username=$username'>Contact</a></li>";
 
 							}else{
-									echo "<li class='active'><a href='index.php'>Search Flight</a></li>";
+									echo "<li><a href='index.php'>Search Flight</a></li>";
 									echo "<li class='active'><a href='pricing.php'>Pricing</a></li>";
 									echo "<li><a href='contact.php'>Contact</a></li>";
 								}
@@ -46,7 +46,7 @@ session_start(); ?>
 								    echo "<li><a href='logout.php'>Logout</a></li>";
 								   	echo "<li>".$username."</li>";
 								}else{
-									echo "<li><a href='login.php?pesan=Login'>Log in</a></li>";
+									echo "<li><a href='login.php?pesan=Login&failed='>Log in</a></li>";
 								}
 							?>
 					</div>

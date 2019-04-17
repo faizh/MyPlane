@@ -53,7 +53,7 @@ session_start();
 								    echo "<li><a href='logout.php'>Logout</a></li>";
 								   	echo "<li>".$username."</li>";
 								}else{
-									echo "<li><a href='login.php?pesan=Login'>Log in</a></li>";
+									echo "<li><a href='login.php?pesan=Login&failed='>Log in</a></li>";
 								}
 							?>
 					</div>
@@ -450,7 +450,7 @@ session_start();
 					<div class="col-md-12">
 						<p class="pull-left">
 							<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-							<small class="block">Designed by <a href="https://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
+							<small class="block">Designed by <a href="https://freehtml5.co/" target="_blank">Faiz Hermawan</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
 						</p>
 						<p class="pull-right">
 							<ul class="gtco-social-icons pull-right">

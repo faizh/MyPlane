@@ -12,7 +12,7 @@
 
 if(!mysqli_num_rows($result)){
      echo "<SCRIPT>alert('Error: $msg');history.go (-1)</SCRIPT>";
-     header('Location: login.php?pesan='.$pesan);
+     header('Location: login.php?pesan='.$pesan.'&failed=Wrong Username or password');
   }else{
   	$data = mysqli_fetch_assoc($result);
 

@@ -50,7 +50,7 @@ session_start();
 								    echo "<li><a href='logout.php'>Logout</a></li>";
 								   	echo "<li>".$username."</li>";
 								}else{
-									echo "<li><a href='login.php?pesan=Login'>Log in</a></li>";
+									echo "<li><a href='login.php?pesan=Login&failed='>Log in</a></li>";
 								}
 							?>
 					</div>
@@ -122,10 +122,7 @@ session_start();
 											<td> '.$d['tiba'].'</td>
 											<td>Rp '.$d['harga'].'</td>
 											<td><button class="btn btn-default btn-block"><a href="konfirmasi.php?asal='.$asal.'&tujuan='.$tujuan.'&username='.$username.'&id_rute='.$d['id_rute'].'&jumlah='.$jumlah.'&sisa_seat='.$d['sisa_seat'].'" style="color:black;">Pesan</a></button></td>
-											;
-											</tr>'
-
-
+											</tr>';
 											$id++;
 										} 
 									}

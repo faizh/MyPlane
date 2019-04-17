@@ -47,7 +47,7 @@ session_start();
 								    echo "<li><a href='logout.php'>Logout</a></li>";
 								   	echo "<li>".$username."</li>";
 								}else{
-									echo "<li><a href='login.php?pesan=Login'>Log in</a></li>";
+									echo "<li><a href='login.php?pesan=Login&failed='>Log in</a></li>";
 								}
 							?>
 					</div>

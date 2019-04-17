@@ -38,7 +38,7 @@ session_start();
 							}else{
 									echo "<li><a href='index.php'>Search Flight</a></li>";
 									echo "<li><a href='pricing.php'>Pricing</a></li>";
-									echo "<li class='active'><a href='contact.php'>Contact</a></li>";
+									echo "<li><a href='contact.php'>Contact</a></li>";
 								}
 							?>
 							<!-- <li><a href="pricing.php">Pricing</a></li>	
@@ -80,6 +80,8 @@ session_start();
 												// $pesan="";
 												$pesan=$_GET["pesan"];
 												echo "<h3 c>".$pesan."</h3>";
+												$failed = $_GET["failed"];
+												echo "<h3 class='failed'>".$failed."</h3>";
 												?>
 												
 												<form action="proses_login.php" method="POST">
