@@ -38,12 +38,10 @@ p{
 									$username = $_SESSION['user'];
 									echo "<li><a href='index.php?username=$username'>Search Flight</a></li>";
 									echo "<li class='active'><a href='list_order.php?username=$username'>List Order</a></li>";
-									echo "<li><a href='pricing.php?username=$username'>Pricing</a></li>";
 									echo "<li><a href='contact.php?username=$username'>Contact</a></li>";
 
 							}else{
 									echo "<li class='active'><a href='index.php'>Search Flight</a></li>";
-									echo "<li><a href='pricing.php'>Pricing</a></li>";
 									echo "<li><a href='contact.php'>Contact</a></li>";
 								}
 							?>
@@ -80,22 +78,40 @@ p{
 				$kode_reservasi = $_GET['kode'];
 				$data = mysqli_query($connect, "SELECT * FROM costumer, rute WHERE  kode_reservasi='$kode_reservasi' && username='$username' LIMIT 1");
 				$d = mysqli_fetch_array($data);
+				$rute = $d['id_rute'];
+				$pesawat = mysqli_query($connect, "SELECT * FROM rute, transport WHERE rute.maskapai = transport.id_transport && rute.maskapai=transport.id_transport and rute.id_rute=".$rute."");
+				$datapesawat = mysqli_fetch_array($pesawat);
 				$status = $d['status'];
 				$kode_reservasi = $d['kode_reservasi'];
 				?>
 				<div class="col-md-12">
 					<div class="kbreadcum">
-						<h3>Status</h3>
-						<div style="width: 100%; height: 1px; background-color: #09C6AB; margin: 10px 0px;"></div>
+						<table>
+						<tr>
+							<td><h3>MyPlane</h3></td>
+							<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+							<td></td><td></td><td></td><td></td><td><td></td>
+							<td><h3>Boarding Pass</h3></td>
+						</tr>
+					</table>
+						<td><div style="width: 100%; height: 1px; background-color: #09C6AB; margin: 10px 0px;"></div></td>
+						
 						<?php
 						if ($status == 'Sudah dikonfirmasi') {
-						echo "<p>Selamat pemesanan anda ".$status."</p>";
-						echo "<p>Kode Reservasi anda : <h2>" .$kode_reservasi."</h2></p>";
-						echo "<p>Gunakan kode reservasi tersebut untuk mencetak boardingpass</p>";
+							echo "<table><tr><td>Nama</td><td><b>".$d['tittle']." ".$d['nama_penumpang']."</b></td></tr>
+							<tr><td>Kode Booking</td><td>".$kode_reservasi."</td></tr>
+							<tr><td>Pesawat</td><td>".$datapesawat['nama']."</td></tr>
+							<tr><td>Seat Number</td><td>".$d['kode_kursi']."</td></tr>
+							<tr><td>Departure</td><td>".$d['asal']." ".$d['tanggal']." ".$d['berangkat']."</td></tr>
+							<tr><td>Arrival</td><td>".$d['tujuan']." ".$d['tanggal']." ".$d['tiba']."</td></tr></table>";
+						// echo "<p>Selamat pemesanan anda ".$status."</p>";
+						// echo "<p>Kode Reservasi anda : <h2>" .$kode_reservasi."</h2></p>";
+						// echo "<p>Gunakan kode reservasi tersebut untuk mencetak boardingpass</p>";
 						}else{
 						echo "<p>Tunggu beberapa menit untuk mendapatkan konfirmasi kode reservasi</p>";
 						}
 						?>
+						</table>
 					</div>
 				</div>
 				<div class="clearfix"></div>

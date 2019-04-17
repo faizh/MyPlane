@@ -32,12 +32,10 @@ session_start();
 							if (isset($_SESSION['user'])) {
 									echo "<li><a href='index.php?username=$username'>Search Flight</a></li>";
 									echo "<li class='active'><a href='list_order.php?username=$username'>List Order</a></li>";
-									echo "<li><a href='pricing.php?username=$username'>Pricing</a></li>";
 									echo "<li><a href='contact.php?username=$username'>Contact</a></li>";
 
 							}else{
 									echo "<li class='active'><a href='index.php'>Search Flight</a></li>";
-									echo "<li><a href='pricing.php'>Pricing</a></li>";
 									echo "<li><a href='contact.php'>Contact</a></li>";
 								}
 							?>
@@ -101,7 +99,7 @@ session_start();
 											<td>'.$d["asal"].'</td>
 											<td>'.$d["tujuan"].'</td>
 											<td> Rp '.$d["harga"].'</td>
-											<td><a href="kode_reservasi.php?kode='.$kode.'">Cek Kode Reservasi</a></td>';
+											<td><a href="kode_reservasi.php?kode='.$kode.'">Cek</a></td>';
 											$id++;
 										} 
 

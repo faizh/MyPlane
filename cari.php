@@ -33,12 +33,10 @@ session_start();
 							if (isset($_SESSION['user'])) {
 									echo "<li class='active'><a href='index.php?username=$username'>Search Flight</a></li>";
 									echo "<li><a href='list_order.php?username=$username'>List Order</a></li>";
-									echo "<li><a href='pricing.php?username=$username'>Pricing</a></li>";
 									echo "<li><a href='contact.php?username=$username'>Contact</a></li>";
 
 							}else{
 									echo "<li class='active'><a href='index.php'>Search Flight</a></li>";
-									echo "<li><a href='pricing.php'>Pricing</a></li>";
 									echo "<li><a href='contact.php'>Contact</a></li>";
 								}
 							?>

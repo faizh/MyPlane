@@ -4,13 +4,19 @@ require_once 'action/koneksi.php';
 if(@$_POST['login']){
   $username = $_POST['username'];
   $password = $_POST['password'];
-  $sql = mysqli_query($connect, "SELECT * FROM user where username = '$username' AND password = '$password' AND level='admin'") or die ($db->error);
+  $sql = mysqli_query($connect, "SELECT * FROM petugas where username = '$username' AND password = '$password'") or die ($db->error);
   $data = mysqli_fetch_array($sql);
   $id = $data[0];
   $cek = mysqli_num_rows($sql);
   if($cek>0){
-    $_SESSION['admin'] = $id;
+    if ($data['level']=='admin') {
+       $_SESSION['admin'] = $id;
     echo "<script>window.location = 'adminn/index.php'</script>";
+    }elseif ($data['level']=='petugas') {
+      $_SESSION['admin'] = $id;
+      echo "<script>window.location = 'petugas/index.php'</script>";
+    }
+   
   } else {
     echo "<script>alert('Login Gagal')</script>";
   }

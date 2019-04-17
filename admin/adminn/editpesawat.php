@@ -15,7 +15,7 @@
         $kode = $_POST['kode'];
         $deskripsi = $_POST['deskripsi'];
         $seat = $_POST['seat'];
-        $update = $connect->query("UPDATE transport SET nama='$nama', kode='$kode', deskripsi='$deskripsi', seat='$seat' WHERE id_trans='$ambilid'");
+        $update = $connect->query("UPDATE transport SET nama='$nama', kode='$kode', deskripsi='$deskripsi', seat='$seat' WHERE id_transport='$ambilid'");
         header("location:dafpesawat.php");
 
       }

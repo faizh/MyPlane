@@ -12,6 +12,7 @@
       $deskripsi = $_POST['deskripsi'];
       $seat = $_POST['seat'];     
       $connect->query("INSERT INTO transport (nama, kode, deskripsi, seat) VALUES ('$nama','$kode','$deskripsi','$seat')");
+      header('Location:dafpesawat.php');
     }
     ?>
 

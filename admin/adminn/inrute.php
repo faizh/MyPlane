@@ -16,6 +16,7 @@
 			$maskapai = $_POST['maskapai'];
 			$sisa_seat = $_POST['sisa_seat'];		
 			$connect->query("INSERT INTO `rute` (`id_rute`, `asal`, `tujuan`, `harga`, `berangkat`, `tiba`, `tanggal`, `maskapai`, `sisa_seat`) VALUES (NULL, '$asal', '$tujuan', '$harga', '$berangkat', '$tiba', '$tanggal', '$maskapai', '$sisa_seat');");
+			header('location:dafrute.php');
 		}
 		?>
 
