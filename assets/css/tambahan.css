@@ -1,0 +1,84 @@
+.row-mt-15em {
+	margin-top: 7em !important;
+}
+
+.gtco-cover {
+	height: 100vh !important;
+}
+
+#login{
+	width: 100%;
+	height: 100vh;
+	background: orange;
+}
+
+.box-login{
+	background: #fff;
+	width: 100%;
+	height: 300px;
+	margin-top: 170px;
+	border-radius: 10px;
+}
+
+.breadcrum{
+	background:#09C6AB;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 50px;
+	position: relative;
+	padding-top: 40px;
+	text-align: center;
+}
+.breadcrum h3{
+	color: #fff;
+}
+
+.sap_tabs{
+	padding-top: 100px;
+}
+
+.header{
+	background:url(assets/images/images.jpg);
+	width: 100%;
+}
+
+.tamprute{
+	text-align: center;
+	color: white;
+	font-size: 40px;
+}
+
+.konfirm{
+	background-color: #f7f8f9;
+	width: 100%;
+	height: auto;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+.kbreadcum{
+	background-color: white;
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+}
+
+.kbreadcum h5{
+	margin-left: 6px;
+	font-size: 16px;
+	color: #777;
+}
+
+@media(max-width: 768px){
+	.kbreadcum{
+		margin-bottom: 20px;
+		height: auto;
+	}
+	.konfirm{
+		height: auto;
+	}
+}
+
